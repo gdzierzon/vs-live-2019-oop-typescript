@@ -1,0 +1,12 @@
+{
+  "name": "vs-live-2019-oop-typescript",
+  "author": "Gregor Dzierzon <gdzierzon@gmail.com> (https://igregor.net/)",
+  "devDependencies": {
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  },
+  "scripts": {
+    "codestyle:check": "tslint -c tslint.json -p tsconfig.json",
+    "codestyle:fix": "tslint -c tslint.json -p tsconfig.json --fix"
+  }
+}

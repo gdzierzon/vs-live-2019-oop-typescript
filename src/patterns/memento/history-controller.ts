@@ -1,23 +1,19 @@
 import { PersonManager } from './person-manager';
 import { Snapshot } from './snapshot';
+
 export class HistoryController
 {
-    controller: PersonManager;
+    manager: PersonManager;
     snapshots: Snapshot[] = [];
 
-    constructor(controller: PersonManager)
+    constructor(manager: PersonManager)
     {
-        this.controller = controller;
-    }
-
-    get CanUndo(): boolean
-    {
-        return this.snapshots.length > 0;
+        this.manager = manager;
     }
 
     backup(): void
     {
-        this.snapshots.push(this.controller.save());
+        this.snapshots.push(this.manager.save());
     }
 
     undo(): void
@@ -25,7 +21,12 @@ export class HistoryController
         if(this.CanUndo)
         {
             let snapshot = this.snapshots.pop();
-            this.controller.restore(snapshot);
+            this.manager.restore(snapshot);
         }
+    }
+
+    get CanUndo(): boolean
+    {
+        return this.snapshots.length > 0;
     }
 }

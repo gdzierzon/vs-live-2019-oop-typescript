@@ -7,10 +7,7 @@ export class Snapshot
 
     constructor(person: Person)
     {
-        let clone = new Person()
-        clone.clone(person);
-
-        this.person = clone;
+        this.person = person.clone();
         this.timestamp = new Date();
     }
 

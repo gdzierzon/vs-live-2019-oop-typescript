@@ -9,11 +9,14 @@ export class Person
 
     }
 
-    clone(person: Person)
+    clone(): Person
     {
-        this.Name = person.Name;
-        this.Surname = person.Surname;
-        this.Birthdate = person.Birthdate;
+        let clone = new Person();
+        clone.Name = this.Name;
+        clone.Surname = this.Surname;
+        clone.Birthdate = this.Birthdate;
+
+        return clone;
     }
 
     get Name(): string

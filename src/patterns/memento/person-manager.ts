@@ -1,5 +1,6 @@
 import { Person } from '../../models/person';
 import { Snapshot } from './snapshot';
+
 export class PersonManager
 {
     private person: Person;
@@ -7,11 +8,6 @@ export class PersonManager
     constructor(person: Person)
     {
         this.person = person;
-    }
-
-    get Person(): Person
-    {
-        return this.person;
     }
 
     save():Snapshot
@@ -22,5 +18,11 @@ export class PersonManager
     restore(snapshot: Snapshot)
     {
         this.person = snapshot.Person;
+    }
+    
+
+    get Person(): Person
+    {
+        return this.person;
     }
 }

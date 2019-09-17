@@ -4,11 +4,6 @@ export class Person
     private surname?: string;
     private birthdate?: string;
 
-    constructor()
-    {
-
-    }
-
     clone(): Person
     {
         let clone = new Person();

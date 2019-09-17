@@ -11,15 +11,12 @@ export class HistoryController
         this.manager = manager;
     }
 
-    backup(): void
-    {
+    backup(): void {
         this.snapshots.push(this.manager.save());
     }
 
-    undo(): void
-    {
-        if(this.CanUndo)
-        {
+    undo(): void {
+        if(this.CanUndo) {
             let snapshot = this.snapshots.pop();
             this.manager.restore(snapshot);
         }

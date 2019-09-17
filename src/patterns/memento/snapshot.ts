@@ -1,4 +1,5 @@
 import { Person } from '../../models/person';
+
 export class Snapshot
 {
     person: Person;
@@ -6,12 +7,10 @@ export class Snapshot
 
     constructor(person: Person)
     {
-        let newPerson = new Person();
-        newPerson.Name = person.Name;
-        newPerson.Surname = person.Surname;
-        newPerson.Birthdate = person.Birthdate;
+        let clone = new Person()
+        clone.clone(person);
 
-        this.person = newPerson;
+        this.person = clone;
         this.timestamp = new Date();
     }
 

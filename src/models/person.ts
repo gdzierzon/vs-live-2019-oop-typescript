@@ -4,6 +4,18 @@ export class Person
     private surname?: string;
     private birthdate?: string;
 
+    constructor()
+    {
+
+    }
+
+    clone(person: Person)
+    {
+        this.Name = person.Name;
+        this.Surname = person.Surname;
+        this.Birthdate = person.Birthdate;
+    }
+
     get Name(): string
     {
         return this.name;
